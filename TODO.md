@@ -41,7 +41,7 @@ Basic Requirements:
 
 5. DONE When a user types a GitHub username into the text field, use jQuery's ajax method to send a POST request to /repos (you'll have to fix the bug in the Search Component first).
 
-6. Complete the getReposByUsername function in helpers/github.js. In this function, you'll use the axios npm module to fetch a user's repositories from the GitHub API  .
+6. DONE Complete the getReposByUsername function in helpers/github.js. In this function, you'll use the axios npm module to fetch a user's repositories from the GitHub API  .
   A. To access the GitHub API without rate limits, you'll need a personal access token  . Make a copy of config.example.js and rename it to config.js, then add your personal access token.
 
 
