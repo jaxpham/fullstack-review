@@ -11,14 +11,14 @@ let getReposByUsername = (user) => {
 
   let options = {
     method: 'GET',
-    url: 'https://api.github.com',
+    url: 'https://api.github.com/users/' + user,
     headers: {
       'User-Agent': 'request',
       'Authorization': `token ${config.TOKEN}`
-    },
-    data: qs.stringify(user)
+    }
   };
-  axios(options);
+  return axios(options);
 }
 
+// getReposByUsername('jaxpham')
 module.exports.getReposByUsername = getReposByUsername;

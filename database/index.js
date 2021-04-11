@@ -11,11 +11,10 @@ db.once('open', function() {
 let repoSchema = mongoose.Schema({
   // TODO: your schema here!
   // Id  Name  Owner  URl  ForkCOunt
-  ID: Number,
-  Name: String,
-  Owner: String,
-  URL: String,
-  ForkCount: Number
+  id: Number,
+  name: String,
+  url: String,
+  followers: Number
 
 });
 
@@ -29,26 +28,25 @@ let Repo = mongoose.model('Repo', repoSchema);
 // Query the repo collection for how many documents are in it and log answer to the console
 
 // Saves the Repo
-let save = (err, myRepo) => {
-  Repo.create({ ID: 1, Name: 'Test', Owner: 'Testing', URL: 'Test.com', ForkCount: 5}, (err, success) => {
+let save = (myRepo) => {
+
+  Repo.create({ id: myRepo.id, name: myRepo.name, url: myRepo.url, followers: myRepo.followers}, (err, success) => {
     if (err) {
       console.log(err);
     } else {
       console.log(success);
+      Repo.find({}, (err, data) => {
+        console.log(data)
+      })
     }
   })
+
 }
 
-const myRepo = new Repo ({
-
-  ID: 1,
-  Name: 'Test',
-  Owner: 'Testing',
-  URL: 'Test.com',
-  ForkCount: 5
-});
 
 
 
-module.exports.connection = db;
-module.exports.save = save;
+module.exports = {
+  connection: db,
+  save: save,
+};

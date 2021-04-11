@@ -49,7 +49,9 @@ Basic Requirements:
   A. Ensure there are no duplicate repos. If you happen to import the same repo twice, it should only show up once in your database. See the tips section about considering unique columns.
  Complete the POST /repos endpoint on your Express server - in this route, you'll use your getReposByUsername function to fetch the specified user's GitHub repos, then use your save function to store the repo information into your database.
 
- Write a GET /repos endpoint that retrieves the top 25 repos stored in your database, sorted by the criteria you decided on earlier.
+
+
+ 2. Write a GET /repos endpoint that retrieves the top 25 repos stored in your database, sorted by the criteria you decided on earlier.
 
  Refactor the client so that when the page loads, the top 25 repos are displayed on the page.
 
